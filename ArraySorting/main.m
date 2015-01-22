@@ -40,15 +40,21 @@ int main(int argc, const char * argv[]) {
 			return [str1 caseInsensitiveCompare:str2];
 		}];
 		MDLog(@"Sorted Alphabetically: %@", stringsByAlphabet);
-
+		
 		// Sorted by Length
 		NSArray* stringsByLength = [strings sortedArrayUsingComparator: ^(NSString* str1, NSString* str2) {
-			
-			if (str1.length < str2.length) return (NSComparisonResult)NSOrderedDescending;
-			if (str1.length > str2.length) return (NSComparisonResult)NSOrderedAscending;
-			return (NSComparisonResult)NSOrderedSame;
+			return (NSComparisonResult)(str2.length - str1.length);
 		}];
 		MDLog(@"Sorted Lengthwise: %@", stringsByLength);
-	}
+		
+		// Sorted by Last Char
+		NSArray* stringsByLastChar = [strings sortedArrayUsingComparator: ^(NSString* str1, NSString* str2) {
+			return [[str1 substringFromIndex:str1.length - 1] caseInsensitiveCompare:[str2 substringFromIndex:str2.length - 1]];
+		}];
+		MDLog(@"Sorted by Last Char: %@", stringsByLastChar);
+	
+		
+	} // @autoreleasepool
+	
 	return 0;
 }
