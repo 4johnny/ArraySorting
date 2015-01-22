@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21477651A70C93000A9A66B /* MyDummyUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B21477641A70C93000A9A66B /* MyDummyUIView.m */; };
 		B23DA7761A708D41004C4791 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DA7751A708D41004C4791 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B21477631A70C93000A9A66B /* MyDummyUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyDummyUIView.h; path = ../MyDummyUIView.h; sourceTree = "<group>"; };
+		B21477641A70C93000A9A66B /* MyDummyUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyDummyUIView.m; path = ../MyDummyUIView.m; sourceTree = "<group>"; };
 		B23DA7721A708D41004C4791 /* ArraySorting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ArraySorting; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23DA7751A708D41004C4791 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +60,8 @@
 		B23DA7741A708D41004C4791 /* ArraySorting */ = {
 			isa = PBXGroup;
 			children = (
+				B21477631A70C93000A9A66B /* MyDummyUIView.h */,
+				B21477641A70C93000A9A66B /* MyDummyUIView.m */,
 				B23DA7751A708D41004C4791 /* main.m */,
 			);
 			path = ArraySorting;
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B23DA7761A708D41004C4791 /* main.m in Sources */,
+				B21477651A70C93000A9A66B /* MyDummyUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +238,7 @@
 				B23DA77B1A708D41004C4791 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
