@@ -41,6 +41,14 @@ int main(int argc, const char * argv[]) {
 		}];
 		MDLog(@"Sorted Alphabetically: %@", stringsByAlphabet);
 
+		// Sorted by Length
+		NSArray* stringsByLength = [strings sortedArrayUsingComparator: ^(NSString* str1, NSString* str2) {
+			
+			if (str1.length < str2.length) return (NSComparisonResult)NSOrderedDescending;
+			if (str1.length > str2.length) return (NSComparisonResult)NSOrderedAscending;
+			return (NSComparisonResult)NSOrderedSame;
+		}];
+		MDLog(@"Sorted Lengthwise: %@", stringsByLength);
 	}
 	return 0;
 }
