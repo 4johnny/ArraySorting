@@ -45,7 +45,7 @@ int main(int argc, const char * argv[]) {
 		
 		
 		// Sorted by Length
-		NSArray* stringsByLength = [strings sortedArrayUsingComparator: ^(NSString* str1, NSString* str2) {
+		NSArray* stringsByLength = [strings sortedArrayUsingComparator:^(NSString* str1, NSString* str2) {
 			
 			return (NSComparisonResult)(str2.length - str1.length);
 		}];
@@ -53,16 +53,17 @@ int main(int argc, const char * argv[]) {
 		
 		
 		// Sorted by Last Char
-		NSArray* stringsByLastChar = [strings sortedArrayUsingComparator: ^(NSString* str1, NSString* str2) {
+		NSArray* stringsByLastChar = [strings sortedArrayUsingComparator:^(NSString* str1, NSString* str2) {
 			
 			return [[str1 substringFromIndex:str1.length]
 					caseInsensitiveCompare:[str2 substringFromIndex:str2.length - 1]];
 		}];
 		MDLog(@"Sorted by Last Char: %@", stringsByLastChar);
 		
+		
 		// Sorted by Occurrences of 'e'
 		NSString* charStr = @"e";
-		NSArray* stringsByCharOccurrences = [strings sortedArrayUsingComparator: ^(NSString* str1, NSString* str2) {
+		NSArray* stringsByCharOccurrences = [strings sortedArrayUsingComparator:^(NSString* str1, NSString* str2) {
 			
 			NSUInteger str1CountChar =
 			[str1.mutableCopy
@@ -79,6 +80,16 @@ int main(int argc, const char * argv[]) {
 		MDLog(@"Sorted by Occurrences of '%@': %@", charStr, stringsByCharOccurrences);
 		
 		
+		// Excluded strings containing 'e'.
+		NSArray* stringsByExcludingStringsWithChar =
+		[strings filteredArrayUsingPredicate:
+		 [NSPredicate predicateWithBlock:^BOOL(NSString* str, NSDictionary* bindings) {
+			
+			return ![str containsString:charStr];
+		}]];
+		MDLog(@"Filtered by Excluding Strings with '%@': %@", charStr, stringsByExcludingStringsWithChar);
+
+
 	} // @autoreleasepool
 	
 	return 0;
